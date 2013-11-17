@@ -11,10 +11,12 @@ import networkx as nx
 
 BASE_URL = 'http://en.wikipedia.org'
 
-# Advisors appear both as doctoral and academic advisors
-SEC_DOCTORAL = 'Doctoral advisor'
-SEC_ACADEMIC = 'Academic advisor'
-SEC_STUDENTS = 'Notable students'
+# Advisors appear both as doctoral or academic advisors
+SEC_DOC_ADVISOR = '>Doctoral advisor'
+SEC_ACA_ADVISOR = '>Academic advisor'
+# Students  appear both as doctoral or notable students
+SEC_NOT_STUDENTS = '>Notable student'
+SEC_DOC_STUDENTS = '>Doctoral student'
 SEC_END = '</tr>'
 
 WIKI_PERSON = '\/wiki/\D+\"'
@@ -22,55 +24,80 @@ WIKI_PERSON = '\/wiki/\D+\"'
 G = nx.DiGraph()
 
 # already processed persons
-proccessed = []
+processed = []
+
+p = re.compile(WIKI_PERSON)
     
 def get_advisors(page):
-    p = re.compile(WIKI_PERSON)
+    
     lines = page.split('\n')
     
-    advisor_start = False   
+    advisor_start = False  
+    student_start = False  
 
     advisors = []
+    students = []
 
-    
     for line in lines:
-        if advisor_start:
+        if advisor_start or student_start:
             if SEC_END in line:
-                break
+                advisor_start = False  
+                student_start = False 
             matches = p.findall(line)
             for m in matches:
-                advisor= m.split('"')[0]
-                advisors.append(advisor)
+                person = m.split('"')[0]
+                if advisor_start:
+                    advisors.append(person)
+                elif student_start:
+                    students.append(person)
                          
-        if (SEC_DOCTORAL in line) or (SEC_ACADEMIC in line):
+        if (SEC_DOC_ADVISOR in line) or (SEC_ACA_ADVISOR in line):
             advisor_start = True
+        elif (SEC_DOC_STUDENTS in line) or (SEC_NOT_STUDENTS in line):
+            student_start = True
             
-    return advisors
+    return advisors, students
     
     
     
 def process_url(url):
     response = urllib2.urlopen(url)
     page = response.read()
-    advisors = get_advisors(page)
-    return advisors
+    advisors, students = get_advisors(page)
+    return advisors, students
     
 def get_tree(url, G):
     print 'Processing: ' + url
     current = url.split('/')[-1]
-    advisors = process_url(url)
-    proccessed.append(current)
+    advisors, students = process_url(url)
+    to_process = []
+    processed.append('/wiki/' + current)
     for advisor in advisors:
         name = advisor.split('/')[-1]
-        if name in proccessed:
-            print 'Already processed: ' + name
-            continue
-        G.add_edge(name, current)        
-        get_tree (BASE_URL + advisor, G)
+        if not G.has_edge(name, current):
+            G.add_edge(name, current)
+        if not advisor in processed:
+            to_process.append(advisor)
+    
+    for student in students:
+        name = student.split('/')[-1]
+        if not G.has_edge(current, name):
+            G.add_edge(current, name)   
+        if not student in processed:
+            to_process.append(student)
+         
+        
+    for person in to_process:   
+        if not person in processed:
+            get_tree(BASE_URL + person, G)     
+        else:
+            print 'Already processed: ' + person
     
     return G
 
-    
+#ad, st = process_url('http://en.wikipedia.org/wiki/David_Wheeler_%28computer_scientist%29')
+#print ad
+#print st
 
 #Usage example
 if __name__ == "__main__":   
