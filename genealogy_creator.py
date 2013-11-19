@@ -21,14 +21,11 @@ SEC_END = '</tr>'
 
 WIKI_PERSON = '\/wiki/\D+\"'
 
-G = nx.DiGraph()
-
-# already processed persons
-processed = []
+MAX_DEPTH = 6
 
 p = re.compile(WIKI_PERSON)
     
-def get_advisors(page):
+def get_connections(page):
     
     lines = page.split('\n')
     
@@ -63,13 +60,13 @@ def get_advisors(page):
 def process_url(url):
     response = urllib2.urlopen(url)
     page = response.read()
-    advisors, students = get_advisors(page)
+    advisors, students = get_connections(page)
     return advisors, students
     
-def get_tree(url, G):
+def get_trunk(url, G, processed):
     print 'Processing: ' + url
     current = url.split('/')[-1]
-    advisors, students = process_url(url)
+    advisors, _ = process_url(url)
     to_process = []
     processed.append('/wiki/' + current)
     for advisor in advisors:
@@ -78,31 +75,47 @@ def get_tree(url, G):
             G.add_edge(name, current)
         if not advisor in processed:
             to_process.append(advisor)
-    
-    for student in students:
-        name = student.split('/')[-1]
-        if not G.has_edge(current, name):
-            G.add_edge(current, name)   
-        if not student in processed:
-            to_process.append(student)
-         
+        else:
+            print 'Already processed: ' + advisor
         
     for person in to_process:   
         if not person in processed:
-            get_tree(BASE_URL + person, G)     
+            _, processed = get_trunk(BASE_URL + person, G, processed)     
         else:
             print 'Already processed: ' + person
     
+    return G, processed
+    
+def expand_tree (G, processed):
+    for advisor in G.nodes():
+        if not advisor in processed:
+            print 'Getting students of: ' + advisor
+            _, students = process_url(BASE_URL + '/wiki/' + advisor)
+            processed.append(advisor)
+            for student in students:
+                student_name = student.split('/')[-1]
+                if not G.has_edge(advisor, student_name):
+                    G.add_edge(advisor, student_name)
+        else:
+            print 'Already processed: ' + advisor
+    return G, processed
+
+def build_genealogy(base_person):
+    G = nx.DiGraph()
+    processed = []
+    G, _ = get_trunk(base_person, G, processed)
+    processed = []
+    for i in range(MAX_DEPTH):
+        print 'Expanding: ' + str(i)
+        G, processed = expand_tree(G, processed) 
     return G
+    
 
-#ad, st = process_url('http://en.wikipedia.org/wiki/David_Wheeler_%28computer_scientist%29')
-#print ad
-#print st
 
-#Usage example
+
 if __name__ == "__main__":   
-    G = get_tree('http://en.wikipedia.org/wiki/Andy_Hopper', G)
+    G = build_genealogy('http://en.wikipedia.org/wiki/Andy_Hopper')
     print G.nodes()
     nx.write_gexf(G, "./test.gexf")
 
-        
+         
