@@ -40,17 +40,21 @@ def get_connections(page):
     students = []
 
     for line in lines:
-        if advisor_start or student_start:
-            if SEC_END in line:
-                advisor_start = False  
-                student_start = False 
-            matches = p.findall(line)
-            for m in matches:
-                person = m.split('"')[0]
-                if advisor_start:
-                    advisors.append(person)
-                elif student_start:
-                    students.append(person)
+        if infobox_start:
+            if END_INFOBOX in line:
+                break
+            if advisor_start or student_start:
+                if SEC_END in line:
+                    advisor_start = False  
+                    student_start = False 
+                matches = p.findall(line)
+                for m in matches:
+                    person = m.split('"')[0]
+                    if advisor_start:
+                        advisors.append(person)
+                    elif student_start:
+                        students.append(person)
+            
                          
         if (SEC_DOC_ADVISOR in line) or (SEC_ACA_ADVISOR in line):
             advisor_start = True
@@ -125,11 +129,13 @@ def build_genealogy(base_person):
         G, processed = expand_tree(G, processed) 
     return G
 
-if __name__ == "__main__":   
+if __name__ == "__main__": 
+    print 'Getting genealogy'
     G = build_genealogy('http://en.wikipedia.org/wiki/Andy_Hopper')
     print G.nodes()
     print 'Total nodes: '  + str(len(G.nodes()))
     nx.write_gexf(G, "./test.gexf")
+    print 'Fin'
     
 #    G = nx.read_gexf("./test.gexf")
 #    for person in G.nodes():
