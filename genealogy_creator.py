@@ -19,9 +19,12 @@ SEC_NOT_STUDENTS = '>Notable student'
 SEC_DOC_STUDENTS = '>Doctoral student'
 SEC_END = '</tr>'
 
+BEGIN_INFOBOX = '<table class="infobox vcard"'
+END_INFOBOX = '</table>'
+
 WIKI_PERSON = '\/wiki/\D+\"'
 
-MAX_DEPTH = 6
+MAX_DEPTH = 10
 
 p = re.compile(WIKI_PERSON)
     
@@ -30,7 +33,8 @@ def get_connections(page):
     lines = page.split('\n')
     
     advisor_start = False  
-    student_start = False  
+    student_start = False 
+    infobox_start = False
 
     advisors = []
     students = []
@@ -52,15 +56,22 @@ def get_connections(page):
             advisor_start = True
         elif (SEC_DOC_STUDENTS in line) or (SEC_NOT_STUDENTS in line):
             student_start = True
+        elif BEGIN_INFOBOX in line:
+            infobox_start = True
+        
             
     return advisors, students
     
     
     
 def process_url(url):
-    response = urllib2.urlopen(url)
-    page = response.read()
-    advisors, students = get_connections(page)
+    try:    
+        response = urllib2.urlopen(url)
+        page = response.read()
+        advisors, students = get_connections(page)
+    except urllib2.HTTPError:
+        advisors = []
+        students = []
     return advisors, students
     
 def get_trunk(url, G, processed):
@@ -87,17 +98,21 @@ def get_trunk(url, G, processed):
     return G, processed
     
 def expand_tree (G, processed):
-    for advisor in G.nodes():
-        if not advisor in processed:
-            print 'Getting students of: ' + advisor
-            _, students = process_url(BASE_URL + '/wiki/' + advisor)
-            processed.append(advisor)
+    for person in G.nodes():
+        if not person in processed:
+            print 'Getting relations of: ' + person
+            advisors, students = process_url(BASE_URL + '/wiki/' + person)
+            processed.append(person)
             for student in students:
                 student_name = student.split('/')[-1]
-                if not G.has_edge(advisor, student_name):
-                    G.add_edge(advisor, student_name)
+                if not G.has_edge(person, student_name):
+                    G.add_edge(person, student_name)
+            for advisor in advisors:
+                advisor_name = advisor.split('/')[-1]
+                if not G.has_edge(advisor_name, person):
+                    G.add_edge(advisor_name, person)
         else:
-            print 'Already processed: ' + advisor
+            print 'Already processed: ' + person
     return G, processed
 
 def build_genealogy(base_person):
@@ -109,13 +124,23 @@ def build_genealogy(base_person):
         print 'Expanding: ' + str(i)
         G, processed = expand_tree(G, processed) 
     return G
-    
-
-
 
 if __name__ == "__main__":   
     G = build_genealogy('http://en.wikipedia.org/wiki/Andy_Hopper')
     print G.nodes()
+    print 'Total nodes: '  + str(len(G.nodes()))
     nx.write_gexf(G, "./test.gexf")
+    
+#    G = nx.read_gexf("./test.gexf")
+#    for person in G.nodes():
+#        advisors, _ = process_url(BASE_URL + '/wiki/' + person)
+#        for advisor in advisors:
+#            name = advisor.split('/')[-1]
+#            if not G.has_edge(name, person):
+#                G.add_edge(name, person)
+#                print 'added: ' + name + '-' + person
+#    
+#    nx.write_gexf(G, "./test.gexf")
+            
 
          
