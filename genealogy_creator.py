@@ -134,7 +134,10 @@ def expand_tree (G, processed):
             print 'Already processed: ' + person
     return G, processed
 
-def build_genealogy(base_person_name, base_person_link):
+# Depth 0 builds only the trunk based on the advisors, increasing the depth
+# recovers more student genterations.
+def build_genealogy(base_person_name, base_person_link, depth = 0):
+    MAX_DEPTH = depth
     G = nx.DiGraph()
     processed = []
     G, _ = get_trunk(base_person_name, base_person_link, G, processed)
@@ -142,26 +145,14 @@ def build_genealogy(base_person_name, base_person_link):
     for i in range(MAX_DEPTH):
         print 'Expanding: ' + str(i)
         G, processed = expand_tree(G, processed) 
-    return G
+    return G 
+    
+       
 
-if __name__ == "__main__": 
+if __name__ == "__main__":    
     print 'Getting genealogy'
     G = build_genealogy('Andy Hopper', 'http://en.wikipedia.org/wiki/Andy_Hopper')
     print G.nodes()
     print 'Total nodes: '  + str(len(G.nodes()))
     nx.write_gexf(G, "./test.gexf")
     print 'Fin'
-    
-#    G = nx.read_gexf("./test.gexf")
-#    for person in G.nodes():
-#        advisors, _ = process_url(BASE_URL + '/wiki/' + person)
-#        for advisor in advisors:
-#            name = advisor.split('/')[-1]
-#            if not G.has_edge(name, person):
-#                G.add_edge(name, person)
-#                print 'added: ' + name + '-' + person
-#    
-#    nx.write_gexf(G, "./test.gexf")
-            
-
-         
