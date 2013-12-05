@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?><gexf version="1.1" xmlns="http://www.gexf.net/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="link" type="string" />
+    </attributes>
+    <nodes>
+      <node id="William Whewell" label="William Whewell">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/William_Whewell" />
+        </attvalues>
+      </node>
+      <node id="David Wheeler" label="David Wheeler">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/David_Wheeler_(computer_scientist)" />
+        </attvalues>
+      </node>
+      <node id="Petrus Ryff" label="Petrus Ryff">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Petrus_Ryff" />
+        </attvalues>
+      </node>
+      <node id="John Dawson" label="John Dawson">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/John_Dawson_(surgeon)" />
+        </attvalues>
+      </node>
+      <node id="Edward Waring" label="Edward Waring">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Edward_Waring" />
+        </attvalues>
+      </node>
+      <node id="Isaac Barrow" label="Isaac Barrow">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Isaac_Barrow" />
+        </attvalues>
+      </node>
+      <node id="Giovanni Manardo" label="Giovanni Manardo">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/w/index.php?title=Giovanni_Manardo&amp;amp;action=edit&amp;amp;redlink=1" />
+        </attvalues>
+      </node>
+      <node id="John Ashworth Ratcliffe" label="John Ashworth Ratcliffe">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/J._A._Ratcliffe" />
+        </attvalues>
+      </node>
+      <node id="Gerard van Swieten" label="Gerard van Swieten">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Gerard_van_Swieten" />
+        </attvalues>
+      </node>
+      <node id="Thomas Huxley" label="Thomas Huxley">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Thomas_Huxley" />
+        </attvalues>
+      </node>
+      <node id="George Peacock" label="George Peacock">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/George_Peacock" />
+        </attvalues>
+      </node>
+      <node id="John Tyndall" label="John Tyndall">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/John_Tyndall" />
+        </attvalues>
+      </node>
+      <node id="Adam Sedgwick" label="Adam Sedgwick">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Adam_Sedgwick" />
+        </attvalues>
+      </node>
+      <node id="John Cranke" label="John Cranke">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/John_Cranke" />
+        </attvalues>
+      </node>
+      <node id="Johannes de Bruyn" label="Johannes de Bruyn">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/w/index.php?title=Johannes_de_Bruyn&amp;amp;action=edit&amp;amp;redlink=1" />
+        </attvalues>
+      </node>
+      <node id="Adriaan van den Spiegel" label="Adriaan van den Spiegel">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Adriaan_van_den_Spiegel" />
+        </attvalues>
+      </node>
+      <node id="Georg Joseph Beer" label="Georg Joseph Beer">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Georg_Joseph_Beer" />
+        </attvalues>
+      </node>
+      <node id="William Mackenzie" label="William Mackenzie">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/William_Mackenzie_(ophthalmologist)" />
+        </attvalues>
+      </node>
+      <node id="Gabriele Falloppio" label="Gabriele Falloppio">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Gabriele_Falloppio" />
+        </attvalues>
+      </node>
+      <node id="Herman Boerhaave" label="Herman Boerhaave">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Herman_Boerhaave" />
+        </attvalues>
+      </node>
+      <node id="John Philips Higman" label="John Philips Higman">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/w/index.php?title=John_Philips_Higman&amp;amp;action=edit&amp;amp;redlink=1" />
+        </attvalues>
+      </node>
+      <node id="Alexander Bickerton" label="Alexander Bickerton">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Alexander_Bickerton" />
+        </attvalues>
+      </node>
+      <node id="Franciscus Sylvius" label="Franciscus Sylvius">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Franciscus_Sylvius" />
+        </attvalues>
+      </node>
+      <node id="Theodor Zwinger" label="Theodor Zwinger">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Theodor_Zwinger" />
+        </attvalues>
+      </node>
+      <node id="Roger Cotes" label="Roger Cotes">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Roger_Cotes" />
+        </attvalues>
+      </node>
+      <node id="Robert Smith" label="Robert Smith">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Robert_Smith_(mathematician)" />
+        </attvalues>
+      </node>
+      <node id="William Hopkins" label="William Hopkins">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/William_Hopkins" />
+        </attvalues>
+      </node>
+      <node id="Augustus De Morgan" label="Augustus De Morgan">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Augustus_De_Morgan" />
+        </attvalues>
+      </node>
+      <node id="Edward Victor Appleton" label="Edward Victor Appleton">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Edward_Victor_Appleton" />
+        </attvalues>
+      </node>
+      <node id="Anton von StÃ¶rck" label="Anton von StÃ¶rck">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Anton_von_St%C3%B6rck" />
+        </attvalues>
+      </node>
+      <node id="Edward John Routh" label="Edward John Routh">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Edward_John_Routh" />
+        </attvalues>
+      </node>
+      <node id="John Hudson" label="John Hudson">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/John_Hudson_(mathematician)" />
+        </attvalues>
+      </node>
+      <node id="Thomas Jones" label="Thomas Jones">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Thomas_Jones_(mathematician)" />
+        </attvalues>
+      </node>
+      <node id="Pietro Roccabonella" label="Pietro Roccabonella">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/w/index.php?title=Pietro_Roccabonella&amp;amp;action=edit&amp;amp;redlink=1" />
+        </attvalues>
+      </node>
+      <node id="Burchard de Volder" label="Burchard de Volder">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Burchard_de_Volder" />
+        </attvalues>
+      </node>
+      <node id="Andy Hopper" label="Andy Hopper">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Andy_Hopper" />
+        </attvalues>
+      </node>
+      <node id="Edward Frankland" label="Edward Frankland">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Edward_Frankland" />
+        </attvalues>
+      </node>
+      <node id="Stephen Whisson" label="Stephen Whisson">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Stephen_Whisson" />
+        </attvalues>
+      </node>
+      <node id="Ernest Rutherford" label="Ernest Rutherford">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Ernest_Rutherford" />
+        </attvalues>
+      </node>
+      <node id="Joseph Barth" label="Joseph Barth">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Joseph_Barth" />
+        </attvalues>
+      </node>
+      <node id="Richard Bentley" label="Richard Bentley">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Richard_Bentley" />
+        </attvalues>
+      </node>
+      <node id="Thomas Postlethwaite" label="Thomas Postlethwaite">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Thomas_Postlethwaite" />
+        </attvalues>
+      </node>
+      <node id="Walter Taylor" label="Walter Taylor">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Walter_Taylor_(mathematician)" />
+        </attvalues>
+      </node>
+      <node id="Bassiano Landi" label="Bassiano Landi">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/w/index.php?title=Bassiano_Landi&amp;amp;action=edit&amp;amp;redlink=1" />
+        </attvalues>
+      </node>
+      <node id="Isaac Newton" label="Isaac Newton">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Isaac_Newton" />
+        </attvalues>
+      </node>
+      <node id="John Strutt (Rayleigh)" label="John Strutt (Rayleigh)">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/John_Strutt,_3rd_Baron_Rayleigh" />
+        </attvalues>
+      </node>
+      <node id="J. J. Thomson" label="J. J. Thomson">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/J._J._Thomson" />
+        </attvalues>
+      </node>
+      <node id="Antonio Musa Brassavola" label="Antonio Musa Brassavola">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Antonio_Musa_Brassavola" />
+        </attvalues>
+      </node>
+      <node id="Girolamo Fabrici" label="Girolamo Fabrici">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Girolamo_Fabrici" />
+        </attvalues>
+      </node>
+      <node id="Maurice Wilkes" label="Maurice Wilkes">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Maurice_Wilkes" />
+        </attvalues>
+      </node>
+      <node id="NiccolÃ² Leoniceno" label="NiccolÃ² Leoniceno">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Niccol%C3%B2_Leoniceno" />
+        </attvalues>
+      </node>
+      <node id="Adolph Vorstius" label="Adolph Vorstius">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Adolph_Vorstius" />
+        </attvalues>
+      </node>
+      <node id="Gilbert Jack" label="Gilbert Jack">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Gilbert_Jack" />
+        </attvalues>
+      </node>
+      <node id="Emmanuel Stupanus" label="Emmanuel Stupanus">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Emmanuel_Stupanus" />
+        </attvalues>
+      </node>
+      <node id="Thomas Wharton Jones" label="Thomas Wharton Jones">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Thomas_Wharton_Jones" />
+        </attvalues>
+      </node>
+      <node id="Benjamin Pulleyn" label="Benjamin Pulleyn">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Benjamin_Pulleyn" />
+        </attvalues>
+      </node>
+      <node id="Isaac Todhunter" label="Isaac Todhunter">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/Isaac_Todhunter" />
+        </attvalues>
+      </node>
+      <node id="James Duport" label="James Duport">
+        <attvalues>
+          <attvalue for="0" value="http://en.wikipedia.org/wiki/James_Duport" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="William Whewell" target="Augustus De Morgan" />
+      <edge id="1" source="David Wheeler" target="Andy Hopper" />
+      <edge id="2" source="Petrus Ryff" target="Emmanuel Stupanus" />
+      <edge id="3" source="John Dawson" target="Adam Sedgwick" />
+      <edge id="4" source="Edward Waring" target="John Dawson" />
+      <edge id="5" source="Isaac Barrow" target="Isaac Newton" />
+      <edge id="6" source="Giovanni Manardo" target="Antonio Musa Brassavola" />
+      <edge id="7" source="John Ashworth Ratcliffe" target="Maurice Wilkes" />
+      <edge id="8" source="Gerard van Swieten" target="Anton von StÃ¶rck" />
+      <edge id="9" source="Thomas Huxley" target="Alexander Bickerton" />
+      <edge id="10" source="George Peacock" target="Augustus De Morgan" />
+      <edge id="11" source="John Tyndall" target="Alexander Bickerton" />
+      <edge id="12" source="Adam Sedgwick" target="George Peacock" />
+      <edge id="13" source="Adam Sedgwick" target="William Hopkins" />
+      <edge id="14" source="John Cranke" target="Thomas Jones" />
+      <edge id="15" source="Johannes de Bruyn" target="Burchard de Volder" />
+      <edge id="16" source="Adriaan van den Spiegel" target="Adolph Vorstius" />
+      <edge id="17" source="Georg Joseph Beer" target="William Mackenzie" />
+      <edge id="18" source="William Mackenzie" target="Thomas Wharton Jones" />
+      <edge id="19" source="Gabriele Falloppio" target="Girolamo Fabrici" />
+      <edge id="20" source="Herman Boerhaave" target="Gerard van Swieten" />
+      <edge id="21" source="John Philips Higman" target="Augustus De Morgan" />
+      <edge id="22" source="Alexander Bickerton" target="Ernest Rutherford" />
+      <edge id="23" source="Franciscus Sylvius" target="Burchard de Volder" />
+      <edge id="24" source="Theodor Zwinger" target="Petrus Ryff" />
+      <edge id="25" source="Roger Cotes" target="Robert Smith" />
+      <edge id="26" source="Robert Smith" target="Walter Taylor" />
+      <edge id="27" source="William Hopkins" target="Isaac Todhunter" />
+      <edge id="28" source="William Hopkins" target="Edward John Routh" />
+      <edge id="29" source="Augustus De Morgan" target="Edward John Routh" />
+      <edge id="30" source="Edward Victor Appleton" target="John Ashworth Ratcliffe" />
+      <edge id="31" source="Anton von StÃ¶rck" target="Joseph Barth" />
+      <edge id="32" source="Edward John Routh" target="John Strutt (Rayleigh)" />
+      <edge id="33" source="Edward John Routh" target="J. J. Thomson" />
+      <edge id="34" source="John Hudson" target="George Peacock" />
+      <edge id="35" source="Thomas Jones" target="Adam Sedgwick" />
+      <edge id="36" source="Thomas Jones" target="John Hudson" />
+      <edge id="37" source="Pietro Roccabonella" target="NiccolÃ² Leoniceno" />
+      <edge id="38" source="Burchard de Volder" target="Herman Boerhaave" />
+      <edge id="39" source="Edward Frankland" target="Alexander Bickerton" />
+      <edge id="40" source="Stephen Whisson" target="Thomas Postlethwaite" />
+      <edge id="41" source="Ernest Rutherford" target="Edward Victor Appleton" />
+      <edge id="42" source="Joseph Barth" target="Georg Joseph Beer" />
+      <edge id="43" source="Richard Bentley" target="Roger Cotes" />
+      <edge id="44" source="Thomas Postlethwaite" target="John Cranke" />
+      <edge id="45" source="Thomas Postlethwaite" target="Thomas Jones" />
+      <edge id="46" source="Walter Taylor" target="Stephen Whisson" />
+      <edge id="47" source="Bassiano Landi" target="Theodor Zwinger" />
+      <edge id="48" source="Isaac Newton" target="Roger Cotes" />
+      <edge id="49" source="John Strutt (Rayleigh)" target="J. J. Thomson" />
+      <edge id="50" source="J. J. Thomson" target="Edward Victor Appleton" />
+      <edge id="51" source="J. J. Thomson" target="Ernest Rutherford" />
+      <edge id="52" source="Antonio Musa Brassavola" target="Gabriele Falloppio" />
+      <edge id="53" source="Girolamo Fabrici" target="Adriaan van den Spiegel" />
+      <edge id="54" source="Maurice Wilkes" target="David Wheeler" />
+      <edge id="55" source="NiccolÃ² Leoniceno" target="Antonio Musa Brassavola" />
+      <edge id="56" source="Adolph Vorstius" target="Franciscus Sylvius" />
+      <edge id="57" source="Gilbert Jack" target="Adolph Vorstius" />
+      <edge id="58" source="Emmanuel Stupanus" target="Franciscus Sylvius" />
+      <edge id="59" source="Thomas Wharton Jones" target="Thomas Huxley" />
+      <edge id="60" source="Benjamin Pulleyn" target="Isaac Newton" />
+      <edge id="61" source="Isaac Todhunter" target="Edward John Routh" />
+      <edge id="62" source="James Duport" target="Isaac Barrow" />
+    </edges>
+  </graph>
+</gexf>
